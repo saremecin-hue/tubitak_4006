@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edebi Diyalog Üretici</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Edebi Diyalog Üretici</h1>
+    <p class="subtitle">
+      Bir tema seç, yapay zekâ özgün bir edebî diyalog oluştursun.
+    </p>
+
+    <label class="label" for="topicSelect">Tema seç</label>
+    <select id="topicSelect">
+      <option value="" selected disabled>— Tema seç —</option>
+      <option value="Ahlak ve vicdan">Ahlak ve vicdan</option>
+      <option value="Adalet ve toplumsal düzen">Adalet ve toplumsal düzen</option>
+      <option value="Aşk ve bağlılık">Aşk ve bağlılık</option>
+      <option value="Yalnızlık ve iç hesaplaşma">Yalnızlık ve iç hesaplaşma</option>
+      <option value="Özgürlük ve sorumluluk">Özgürlük ve sorumluluk</option>
+      <option value="İnsan ve toplum çatışması">İnsan ve toplum çatışması</option>
+      <option value="Gelenek ve modernleşme">Gelenek ve modernleşme</option>
+      <option value="Kader ve irade">Kader ve irade</option>
+    </select>
+
+    <div class="row">
+      <label class="label" for="lengthSelect">Uzunluk</label>
+      <select id="lengthSelect">
+        <option value="700">~700 kelime</option>
+        <option value="900" selected>~900 kelime</option>
+        <option value="1100">~1100 kelime</option>
+      </select>
+    </div>
+
+    <button id="generateBtn">Metin oluştur</button>
+
+    <pre id="output" aria-live="polite">Hazır. Tema seçip “Metin oluştur”a bas.</pre>
+
+    <p class="hint">
+      Not: Metinler tamamen özgün üretilir; kitaptan alıntı yapılmaz.
+    </p>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
