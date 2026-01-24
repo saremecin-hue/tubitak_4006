@@ -15,8 +15,8 @@ export default async function handler(req, res) {
 
     const client = new OpenAI({ apiKey });
 
-    const { tema, targetWords } = req.body || {};
-    const words = Math.max(500, Math.min(Number(targetWords || 900), 1400)); // güvenli aralık
+    const { tema } = req.body || {};
+    const words = 800;
 
     const prompt = `
 Türk edebiyatı atmosferinde, tamamen ÖZGÜN bir diyalog yaz.
@@ -24,7 +24,7 @@ Türk edebiyatı atmosferinde, tamamen ÖZGÜN bir diyalog yaz.
 KURALLAR:
 - Kitaplardan, şiirlerden veya yazarlardan DOĞRUDAN ALINTI YAPMA.
 - İki karakter konuşsun: (1) duygusal ve idealist bir yazar, (2) realist ve sorgulayıcı bir düşünür.
-- Tema: "${tema}"
+- Tema: "${tema || "Genel"}"
 - Diyalog akıcı, doğal, edebî ama anlaşılır Türkçe ile yazılsın.
 - Konuşmalar satır satır ilerlesin ve her satır "Karakter Adı: ..." formatında olsun.
 - Yaklaşık ${words} kelime civarında olsun (çok kısa kalmasın).
