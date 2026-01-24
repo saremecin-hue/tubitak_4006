@@ -2,17 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("generateBtn");
   const output = document.getElementById("output");
   const topicSelect = document.getElementById("topicSelect");
-  const lengthSelect = document.getElementById("lengthSelect");
 
-  if (!button || !output || !topicSelect || !lengthSelect) {
+  if (!button || !output || !topicSelect) {
     console.error("Gerekli DOM elemanları bulunamadı.");
     return;
   }
 
   button.addEventListener("click", async () => {
     const tema = topicSelect.value || "";
-    const targetWords = Number(lengthSelect.value || 900);
-
     if (!tema) {
       output.textContent = "Lütfen bir tema seçin.";
       return;
@@ -28,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tema, targetWords })
+        body: JSON.stringify({ tema })
       });
 
       const contentType = res.headers.get("content-type") || "";
