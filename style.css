@@ -1,0 +1,101 @@
+:root{
+  --bg:#f6f7fb;
+  --card:#ffffff;
+  --text:#1e1f24;
+  --muted:#5b5f6b;
+  --border:#e6e8ef;
+  --btn:#2f7dff;
+  --btnHover:#276be0;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:var(--bg);
+  color:var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  padding:20px;
+}
+
+.card{
+  width:min(850px, 100%);
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:26px;
+  box-shadow: 0 10px 30px rgba(20,30,50,.08);
+}
+
+h1{
+  margin:0 0 6px 0;
+  font-size:1.6rem;
+}
+
+.subtitle{
+  margin:0 0 18px 0;
+  color:var(--muted);
+}
+
+.label{
+  display:block;
+  margin:12px 0 8px 0;
+  font-weight:600;
+  color:var(--text);
+}
+
+select{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  font-size:1rem;
+}
+
+.row{
+  margin-top:10px;
+}
+
+button{
+  margin-top:16px;
+  width:100%;
+  padding:14px 16px;
+  border:none;
+  border-radius:14px;
+  font-size:1.05rem;
+  font-weight:700;
+  background:var(--btn);
+  color:white;
+  cursor:pointer;
+  transition: .15s ease;
+}
+
+button:hover{ background:var(--btnHover); }
+button:disabled{
+  opacity:.7;
+  cursor:not-allowed;
+}
+
+#output{
+  margin-top:18px;
+  width:100%;
+  min-height:260px;
+  background:#fbfbfe;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  white-space:pre-wrap;
+  line-height:1.55;
+  font-size:1rem;
+}
+
+.hint{
+  margin:10px 0 0 0;
+  color:var(--muted);
+  font-size:.95rem;
+}
