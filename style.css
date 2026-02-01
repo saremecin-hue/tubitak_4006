@@ -52,6 +52,28 @@ body{
   margin-top:140px;
   flex-wrap:wrap;
 }
+.choices3{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:22px;
+  justify-items:center;
+  align-items:center;
+
+  margin-top:140px;
+}
+
+.choices3 .pill{
+  width:100%;
+  max-width:360px;
+}
+
+/* 3. buton: alt sırada ortada */
+.pillCenter{
+  grid-column: 1 / span 2;
+  justify-self:center;
+  max-width:360px;
+}
+
 
 .pill{
   background:var(--blue);
