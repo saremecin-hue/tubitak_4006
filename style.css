@@ -116,16 +116,19 @@ select{
   flex-wrap:wrap;
 }
 
-.diamond{
+.actionBtn{
   background:var(--green);
   border:none;
-  width:140px;
-  height:90px;
-  transform: rotate(45deg);
-  border-radius:14px;
+
+  padding:16px 28px;
+  min-width:200px;
+
+  border-radius:18px;
+  font-size:1.15rem;
+  font-weight:900;
+
   cursor:pointer;
   box-shadow: var(--shadow);
-  font-weight:900;
 }
 .diamond::after{
   content: attr(data-text);
