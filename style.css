@@ -56,14 +56,17 @@ body{
 .pill{
   background:var(--blue);
   border:none;
-  padding:18px 26px;
-  border-radius:22px;
-  font-size:1.05rem;
+  padding:28px 40px;
+  min-width:260px;
+  min-height:110px;
+
+  border-radius:28px;
+  font-size:1.25rem;
   font-weight:800;
+
   cursor:pointer;
   box-shadow: var(--shadow);
 }
-
 .title{
   text-align:center;
   margin:26px 0 18px;
