@@ -3,43 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edebi Diyalog Üretici</title>
+  <title>Edebi Diyalog Oluşturucu</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <main class="card">
-    <h1>Edebi Diyalog Üretici</h1>
-    <p class="subtitle">
-      Bir tema seç, yapay zekâ yaklaşık 800 kelimelik özgün bir edebî diyalog oluştursun.
-    </p>
+  <main class="wrap">
 
-    <label class="label" for="topicSelect">Tema seç</label>
-    <select id="topicSelect">
-      <option value="" selected disabled>— Tema seç —</option>
-      <option value="Ahlak ve vicdan">Ahlak ve vicdan</option>
-      <option value="Adalet ve toplumsal düzen">Adalet ve toplumsal düzen</option>
-      <option value="Aşk ve bağlılık">Aşk ve bağlılık</option>
-      <option value="Yalnızlık ve iç hesaplaşma">Yalnızlık ve iç hesaplaşma</option>
-      <option value="Özgürlük ve sorumluluk">Özgürlük ve sorumluluk</option>
-      <option value="İnsan ve toplum çatışması">İnsan ve toplum çatışması</option>
-      <option value="Gelenek ve modernleşme">Gelenek ve modernleşme</option>
-      <option value="Kader ve irade">Kader ve irade</option>
-    </select>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="badge">Edebi diyalog<br/>oluşturucu</div>
+    </header>
 
-    <button id="generateBtn">Metin oluştur</button>
+    <!-- VIEW 1: ANA SAYFA -->
+    <section id="viewHome" class="view active">
+      <div class="choices">
+        <button class="pill" id="goTheme">Temasına Göre</button>
+        <button class="pill" id="goEra">Yılına / Dönemine Göre</button>
+      </div>
+    </section>
 
-    <pre id="output" aria-live="polite">Hazır. Tema seçip “Metin oluştur”a bas.</pre>
+    <!-- VIEW 2: TEMA SAYFASI -->
+    <section id="viewTheme" class="view">
+      <h2 class="title">Temasına Göre<br/><span>edebi karakter diyaloğu</span></h2>
 
-    <p class="hint">
-      Not: Metinler tamamen özgün üretilir; kitaptan doğrudan alıntı yapılmaz.
-    </p>
+      <div class="panel">
+        <label class="label" for="themeSelect">Tema seçiniz</label>
+        <select id="themeSelect">
+          <option value="" selected disabled>— Tema seç —</option>
+          <option value="Ahlak ve vicdan">Ahlak ve vicdan</option>
+          <option value="Adalet ve toplumsal düzen">Adalet ve toplumsal düzen</option>
+          <option value="Aşk ve bağlılık">Aşk ve bağlılık</option>
+          <option value="Yalnızlık ve iç hesaplaşma">Yalnızlık ve iç hesaplaşma</option>
+          <option value="Özgürlük ve sorumluluk">Özgürlük ve sorumluluk</option>
+          <option value="Gelenek ve modernleşme">Gelenek ve modernleşme</option>
+          <option value="Kader ve irade">Kader ve irade</option>
+        </select>
+
+        <div class="row">
+          <button class="diamond" id="genTheme">Metin oluştur</button>
+          <button class="ghost" id="backFromTheme">← Geri</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 3: DÖNEM SAYFASI -->
+    <section id="viewEra" class="view">
+      <h2 class="title">Dönemine Göre</h2>
+
+      <div class="panel">
+        <div class="twoCol">
+          <div>
+            <label class="label" for="era1">1. konuşmacının dönemi</label>
+            <select id="era1">
+              <option value="" selected disabled>— Seç —</option>
+              <option value="Tanzimat">Tanzimat</option>
+              <option value="Servet-i Fünun">Servet-i Fünun</option>
+              <option value="Milli Edebiyat">Milli Edebiyat</option>
+              <option value="Cumhuriyet Dönemi">Cumhuriyet Dönemi</option>
+              <option value="Modern / Günümüz">Modern / Günümüz</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="label" for="era2">2. konuşmacının dönemi</label>
+            <select id="era2">
+              <option value="" selected disabled>— Seç —</option>
+              <option value="Tanzimat">Tanzimat</option>
+              <option value="Servet-i Fünun">Servet-i Fünun</option>
+              <option value="Milli Edebiyat">Milli Edebiyat</option>
+              <option value="Cumhuriyet Dönemi">Cumhuriyet Dönemi</option>
+              <option value="Modern / Günümüz">Modern / Günümüz</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="diamond" id="genEra">Metin oluştur</button>
+          <button class="ghost" id="backFromEra">← Geri</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SONUÇ (ortak) -->
+    <section id="viewResult" class="view">
+      <h2 class="title">Oluşturulan Diyalog</h2>
+
+      <div class="resultTop">
+        <div class="avatar">
+          <div class="imgBox" id="leftAvatar">1. konuşmacı<br/>fotoğraf</div>
+        </div>
+        <div class="avatar">
+          <div class="imgBox" id="rightAvatar">2. konuşmacı<br/>fotoğraf</div>
+        </div>
+      </div>
+
+      <div id="output" class="output">
+        Hazır.
+      </div>
+
+      <div class="row">
+        <button class="ghost" id="backFromResult">← Geri</button>
+      </div>
+    </section>
+
   </main>
 
   <script src="./script.js"></script>
 </body>
 </html>
-
-
-
-
-
