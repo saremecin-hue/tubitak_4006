@@ -16,7 +16,7 @@
 
     <!-- VIEW 1: ANA SAYFA -->
     <section id="viewHome" class="view active">
-      <div class="choices">
+      <div class="choices3">
         <button class="pill" id="goTheme">Temasına Göre</button>
         <button class="pill" id="goEra">Yılına / Dönemine Göre</button>
         <button class="pill pillCenter" id="goAuthor">Yazara Göre</button>
@@ -25,7 +25,7 @@
 
     <!-- VIEW 2: TEMA SAYFASI -->
     <section id="viewTheme" class="view">
-      <h2 class="title">Temasına Göre<br/><span>edebi karakter diyaloğu</span></h2>
+      <h2 class="title">Temasına Göre<br/><span>edebi diyalog</span></h2>
 
       <div class="panel">
         <label class="label" for="themeSelect">Tema seçiniz</label>
@@ -36,6 +36,7 @@
           <option value="Aşk ve bağlılık">Aşk ve bağlılık</option>
           <option value="Yalnızlık ve iç hesaplaşma">Yalnızlık ve iç hesaplaşma</option>
           <option value="Özgürlük ve sorumluluk">Özgürlük ve sorumluluk</option>
+          <option value="İnsan ve toplum çatışması">İnsan ve toplum çatışması</option>
           <option value="Gelenek ve modernleşme">Gelenek ve modernleşme</option>
           <option value="Kader ve irade">Kader ve irade</option>
         </select>
@@ -49,7 +50,7 @@
 
     <!-- VIEW 3: DÖNEM SAYFASI -->
     <section id="viewEra" class="view">
-      <h2 class="title">Dönemine Göre</h2>
+      <h2 class="title">Dönemine Göre<br/><span>edebi diyalog</span></h2>
 
       <div class="panel">
         <div class="twoCol">
@@ -85,7 +86,61 @@
       </div>
     </section>
 
-    <!-- SONUÇ (ortak) -->
+    <!-- VIEW 4: YAZARA GÖRE SAYFASI -->
+    <section id="viewAuthor" class="view">
+      <h2 class="title">Yazara Göre<br/><span>edebi diyalog</span></h2>
+
+      <div class="panel">
+        <div class="twoCol">
+          <div>
+            <label class="label" for="author1">1. yazar</label>
+            <select id="author1">
+              <option value="" selected disabled>— Yazar seç —</option>
+              <option value="Namık Kemal">Namık Kemal</option>
+              <option value="Recaizade Mahmut Ekrem">Recaizade Mahmut Ekrem</option>
+              <option value="Halit Ziya Uşaklıgil">Halit Ziya Uşaklıgil</option>
+              <option value="Mehmet Akif Ersoy">Mehmet Akif Ersoy</option>
+              <option value="Yakup Kadri Karaosmanoğlu">Yakup Kadri Karaosmanoğlu</option>
+              <option value="Sabahattin Ali">Sabahattin Ali</option>
+              <option value="Ahmet Hamdi Tanpınar">Ahmet Hamdi Tanpınar</option>
+              <option value="Oğuz Atay">Oğuz Atay</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="label" for="author2">2. yazar</label>
+            <select id="author2">
+              <option value="" selected disabled>— Yazar seç —</option>
+              <option value="Namık Kemal">Namık Kemal</option>
+              <option value="Recaizade Mahmut Ekrem">Recaizade Mahmut Ekrem</option>
+              <option value="Halit Ziya Uşaklıgil">Halit Ziya Uşaklıgil</option>
+              <option value="Mehmet Akif Ersoy">Mehmet Akif Ersoy</option>
+              <option value="Yakup Kadri Karaosmanoğlu">Yakup Kadri Karaosmanoğlu</option>
+              <option value="Sabahattin Ali">Sabahattin Ali</option>
+              <option value="Ahmet Hamdi Tanpınar">Ahmet Hamdi Tanpınar</option>
+              <option value="Oğuz Atay">Oğuz Atay</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="label" for="authorTopic" style="margin-top:12px;">İstersen konu (opsiyonel)</label>
+        <select id="authorTopic">
+          <option value="" selected>— Otomatik seçsin —</option>
+          <option value="İnsan ve toplum">İnsan ve toplum</option>
+          <option value="Ahlak ve vicdan">Ahlak ve vicdan</option>
+          <option value="Adalet">Adalet</option>
+          <option value="Yalnızlık">Yalnızlık</option>
+          <option value="Modernleşme">Modernleşme</option>
+        </select>
+
+        <div class="row">
+          <button class="actionBtn" id="genAuthor">Metin oluştur</button>
+          <button class="ghost" id="backFromAuthor">← Geri</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 5: SONUÇ -->
     <section id="viewResult" class="view">
       <h2 class="title">Oluşturulan Diyalog</h2>
 
@@ -98,12 +153,10 @@
         </div>
       </div>
 
-      <div id="output" class="output">
-        Hazır.
-      </div>
+      <div id="output" class="output">Hazır.</div>
 
       <div class="row">
-        <button class="ghost" id="backFromResult">← Geri</button>
+        <button class="ghost" id="backFromResult">← Ana sayfa</button>
       </div>
     </section>
 
