@@ -2,116 +2,95 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Diyalektik Edebiyat</title>
+  <title>Edebi Diyalog</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HOME -->
-  <section id="home" class="panel active">
-    <h1>Diyalektik Edebiyat</h1>
-    <div class="btn-group">
-      <button data-target="theme">Tema</button>
-      <button data-target="era">Dönem</button>
-      <button data-target="author">Yazar</button>
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="star">
+    <h1>Edebi Diyalog<br>Oluşturucu</h1>
+  </div>
+
+  <div class="home-buttons">
+    <button class="oval-btn" data-target="themePage">Temasına Göre</button>
+    <button class="oval-btn" data-target="eraPage">Dönemine Göre</button>
+  </div>
+</section>
+
+
+<!-- THEME PAGE -->
+<section id="themePage" class="page">
+  <div class="oval-title">Temasına Göre</div>
+
+  <select id="themeSelect" class="select-box">
+    <option>Özgürlük</option>
+    <option>Ahlak ve Vicdan</option>
+    <option>Vatanseverlik ve Sorumluluk</option>
+    <option>İnsan-Toplum Çatışması</option>
+    <option>Gelenek ve Modernleşme</option>
+    <option>Kader ve İrade</option>
+    <option>Ölüm ve Yaşam</option>
+    <option>Adalet ve Eşitlik</option>
+    <option>Aşk ve Bağlılık</option>
+    <option>Sevgi ve Nefret</option>
+    <option>Yalnızlık ve İç Hesaplaşma</option>
+  </select>
+
+  <button class="diamond-btn" id="generateTheme">Metin Oluştur</button>
+</section>
+
+
+<!-- ERA PAGE -->
+<section id="eraPage" class="page">
+  <div class="oval-title">Dönemine Göre</div>
+
+  <select id="era1" class="select-box">
+    <option>İslamiyet Öncesi</option>
+    <option>Geçiş Dönemi</option>
+    <option>Halk Edebiyatı</option>
+    <option>Divan Edebiyatı</option>
+    <option>Tanzimat</option>
+    <option>Servet-i Fünun</option>
+    <option>Milli Edebiyat</option>
+  </select>
+
+  <select id="era2" class="select-box">
+    <option>İslamiyet Öncesi</option>
+    <option>Geçiş Dönemi</option>
+    <option>Halk Edebiyatı</option>
+    <option>Divan Edebiyatı</option>
+    <option>Tanzimat</option>
+    <option>Servet-i Fünun</option>
+    <option>Milli Edebiyat</option>
+  </select>
+
+  <button class="diamond-btn" id="generateEra">Metin Oluştur</button>
+</section>
+
+
+<!-- RESULT PAGE -->
+<section id="resultPage" class="page">
+
+  <div class="dialogue-container">
+    <div class="character left">
+      <div class="avatar"></div>
+      <div class="speech" id="speechLeft"></div>
     </div>
-  </section>
 
-  <!-- THEME PAGE -->
-  <section id="theme" class="panel">
-    <h2>Tema Seç</h2>
-    <select id="themeSelect">
-      <option>Özgürlük</option>
-      <option>Ahlak ve Vicdan</option>
-      <option>Vatanseverlik ve Sorumluluk</option>
-      <option>İnsan-Toplum Çatışması</option>
-      <option>Gelenek ve Modernleşme</option>
-      <option>Kader ve İrade</option>
-      <option>Ölüm ve Yaşam</option>
-      <option>Adalet ve Eşitlik</option>
-      <option>Aşk ve Bağlılık</option>
-      <option>Sevgi ve Nefret</option>
-      <option>Yalnızlık ve İç Hesaplaşma</option>
-    </select>
-
-    <div class="btn-group">
-      <button id="generateTheme">Oluştur</button>
-      <button class="back" data-target="home">Geri</button>
+    <div class="character right">
+      <div class="avatar"></div>
+      <div class="speech" id="speechRight"></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ERA PAGE -->
-  <section id="era" class="panel">
-    <h2>Dönem Karşılaştır</h2>
+  <div class="analysis" id="analysisText"></div>
 
-    <select id="era1">
-      <option>İslamiyet Öncesi</option>
-      <option>Geçiş Dönemi</option>
-      <option>Halk Edebiyatı</option>
-      <option>Divan Edebiyatı</option>
-      <option>Tanzimat</option>
-      <option>Servet-i Fünun</option>
-      <option>Milli Edebiyat</option>
-    </select>
+  <button class="oval-btn" data-target="home">Ana Sayfa</button>
 
-    <select id="era2">
-      <option>İslamiyet Öncesi</option>
-      <option>Geçiş Dönemi</option>
-      <option>Halk Edebiyatı</option>
-      <option>Divan Edebiyatı</option>
-      <option>Tanzimat</option>
-      <option>Servet-i Fünun</option>
-      <option>Milli Edebiyat</option>
-    </select>
-
-    <div class="btn-group">
-      <button id="generateEra">Oluştur</button>
-      <button class="back" data-target="home">Geri</button>
-    </div>
-  </section>
-
-  <!-- AUTHOR PAGE -->
-  <section id="author" class="panel">
-    <h2>Yazar Karşılaştır</h2>
-
-    <select id="author1">
-      <option>Anonim</option>
-      <option>Yusuf Has Hacib</option>
-      <option>Karacaoğlan</option>
-      <option>Fuzuli</option>
-      <option>Namık Kemal</option>
-      <option>Halit Ziya Uşaklıgil</option>
-      <option>Mehmet Rauf</option>
-      <option>Ömer Seyfettin</option>
-    </select>
-
-    <select id="author2">
-      <option>Anonim</option>
-      <option>Yusuf Has Hacib</option>
-      <option>Karacaoğlan</option>
-      <option>Fuzuli</option>
-      <option>Namık Kemal</option>
-      <option>Halit Ziya Uşaklıgil</option>
-      <option>Mehmet Rauf</option>
-      <option>Ömer Seyfettin</option>
-    </select>
-
-    <input id="authorTopic" placeholder="İsteğe bağlı konu">
-
-    <div class="btn-group">
-      <button id="generateAuthor">Oluştur</button>
-      <button class="back" data-target="home">Geri</button>
-    </div>
-  </section>
-
-  <!-- RESULT PAGE -->
-  <section id="result" class="panel">
-    <h2>Sonuç</h2>
-    <div id="outputText"></div>
-    <button class="back" data-target="home">Ana Sayfa</button>
-  </section>
+</section>
 
 <script src="script.js"></script>
 </body>
 </html>
-
