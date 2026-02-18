@@ -1,56 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f5f5f5;
+}
 
-  const views = document.querySelectorAll(".view");
+.view {
+  display: none;
+  padding: 40px;
+}
 
-  function showView(id) {
-    views.forEach(v => v.classList.remove("active"));
-    document.getElementById(id).classList.add("active");
-  }
+.view.active {
+  display: block;
+}
 
-  // HOME BUTTONS
-  document.getElementById("btnTheme").onclick = () => showView("themeView");
-  document.getElementById("btnEra").onclick = () => showView("eraView");
-  document.getElementById("btnAuthor").onclick = () => showView("authorView");
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-  document.getElementById("backTheme").onclick = () => showView("homeView");
-  document.getElementById("backEra").onclick = () => showView("homeView");
-  document.getElementById("backAuthor").onclick = () => showView("homeView");
-  document.getElementById("backResult").onclick = () => showView("homeView");
+select, input {
+  margin: 10px;
+  padding: 8px;
+}
 
-  async function sendRequest(payload) {
-    const res = await fetch("/api/generate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
+#outputText {
+  margin-top: 20px;
+  white-space: pre-wrap;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    const data = await res.json();
-    document.getElementById("outputText").innerText = data.text || "Hata oluştu";
-    showView("resultView");
-  }
-
-  document.getElementById("generateTheme").onclick = () => {
-    sendRequest({
-      mode: "theme",
-      theme: document.getElementById("themeSelect").value
-    });
-  };
-
-  document.getElementById("generateEra").onclick = () => {
-    sendRequest({
-      mode: "era",
-      era1: document.getElementById("era1").value,
-      era2: document.getElementById("era2").value
-    });
-  };
-
-  document.getElementById("generateAuthor").onclick = () => {
-    sendRequest({
-      mode: "author",
-      author1: document.getElementById("author1").value,
-      author2: document.getElementById("author2").value,
-      topic: document.getElementById("authorTopic").value
-    });
-  };
-
-});
