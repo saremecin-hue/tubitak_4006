@@ -2,169 +2,108 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edebi Diyalog Oluşturucu</title>
-  <link rel="stylesheet" href="./style.css" />
+  <title>Diyalektik Edebiyat</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="wrap">
 
-    <!-- HEADER -->
-    <header class="header">
-      <div class="badge">Edebi diyalog<br/>oluşturucu</div>
-    </header>
+  <!-- HOME -->
+  <div id="homeView" class="view active">
+    <h1>Diyalektik Edebiyat</h1>
+    <button id="btnTheme">Tema Karşılaştır</button>
+    <button id="btnEra">Dönem Karşılaştır</button>
+    <button id="btnAuthor">Yazar Karşılaştır</button>
+  </div>
 
-    <!-- VIEW 1: ANA SAYFA -->
-    <section id="viewHome" class="view active">
-      <div class="choices3">
-        <button class="pill" id="goTheme">Temasına Göre</button>
-        <button class="pill" id="goEra">Yılına / Dönemine Göre</button>
-        <button class="pill pillCenter" id="goAuthor">Yazara Göre</button>
-      </div>
-    </section>
+  <!-- THEME -->
+  <div id="themeView" class="view">
+    <h2>Tema Seç</h2>
 
-    <!-- VIEW 2: TEMA SAYFASI -->
-    <section id="viewTheme" class="view">
-      <h2 class="title">Temasına Göre<br/><span>edebi diyalog</span></h2>
+    <select id="themeSelect">
+      <option>Özgürlük</option>
+      <option>Ahlak ve Vicdan</option>
+      <option>Vatanseverlik ve Sorumluluk</option>
+      <option>İnsan-Toplum Çatışması</option>
+      <option>Gelenek ve Modernleşme</option>
+      <option>Kader ve İrade</option>
+      <option>Ölüm ve Yaşam</option>
+      <option>Adalet ve Eşitlik</option>
+      <option>Aşk ve Bağlılık</option>
+      <option>Sevgi ve Nefret</option>
+      <option>Yalnızlık ve İç Hesaplaşma</option>
+    </select>
 
-      <div class="panel">
-        <label class="label" for="themeSelect">Tema seçiniz</label>
-        <select id="themeSelect">
-          <option>Özgürlük</option>
-          <option>Ahlak ve Vicdan</option>
-          <option>Vatanseverlik ve Sorumluluk</option>
-          <option>İnsan-Toplum Çatışması</option>
-          <option>Gelenek ve Modernleşme</option>
-          <option>Kader ve İrade</option>
-          <option>Ölüm ve Yaşam</option>
-          <option>Adalet ve Eşitlik</option>
-          <option>Aşk ve Bağlılık</option>
-          <option>Sevgi ve Nefret</option>
-          <option>Yalnızlık ve İç Hesaplaşma</option>
-        </select>
+    <button id="generateTheme">Oluştur</button>
+    <button id="backTheme">Geri</button>
+  </div>
 
+  <!-- ERA -->
+  <div id="eraView" class="view">
+    <h2>Dönem Seç</h2>
 
-        <div class="row">
-          <button class="actionBtn" id="genTheme">Metin oluştur</button>
-          <button class="ghost" id="backFromTheme">← Geri</button>
-        </div>
-      </div>
-    </section>
+    <select id="era1">
+      <option>İslamiyet Öncesi</option>
+      <option>Geçiş Dönemi</option>
+      <option>Halk Edebiyatı</option>
+      <option>Divan Edebiyatı</option>
+      <option>Tanzimat</option>
+      <option>Servet-i Fünun</option>
+      <option>Milli Edebiyat</option>
+    </select>
 
-    <!-- VIEW 3: DÖNEM SAYFASI -->
-    <section id="viewEra" class="view">
-      <h2 class="title">Dönemine Göre<br/><span>edebi diyalog</span></h2>
+    <select id="era2">
+      <option>İslamiyet Öncesi</option>
+      <option>Geçiş Dönemi</option>
+      <option>Halk Edebiyatı</option>
+      <option>Divan Edebiyatı</option>
+      <option>Tanzimat</option>
+      <option>Servet-i Fünun</option>
+      <option>Milli Edebiyat</option>
+    </select>
 
-      <div class="panel">
-        <div class="twoCol">
-          <div>
-            <label class="label" for="era1">1. konuşmacının dönemi</label>
-            <select id="era1">
-              <option value="" selected disabled>— Seç —</option>
-              <option value="Tanzimat">Tanzimat</option>
-              <option value="Servet-i Fünun">Servet-i Fünun</option>
-              <option value="Milli Edebiyat">Milli Edebiyat</option>
-              <option value="Cumhuriyet Dönemi">Cumhuriyet Dönemi</option>
-              <option value="Modern / Günümüz">Modern / Günümüz</option>
-            </select>
-          </div>
+    <button id="generateEra">Oluştur</button>
+    <button id="backEra">Geri</button>
+  </div>
 
-          <div>
-            <label class="label" for="era2">2. konuşmacının dönemi</label>
-            <select id="era2">
-              <option value="" selected disabled>— Seç —</option>
-              <option value="Tanzimat">Tanzimat</option>
-              <option value="Servet-i Fünun">Servet-i Fünun</option>
-              <option value="Milli Edebiyat">Milli Edebiyat</option>
-              <option value="Cumhuriyet Dönemi">Cumhuriyet Dönemi</option>
-              <option value="Modern / Günümüz">Modern / Günümüz</option>
-            </select>
-          </div>
-        </div>
+  <!-- AUTHOR -->
+  <div id="authorView" class="view">
+    <h2>Yazar Seç</h2>
 
-        <div class="row">
-          <button class="actionBtn" id="genEra">Metin oluştur</button>
-          <button class="ghost" id="backFromEra">← Geri</button>
-        </div>
-      </div>
-    </section>
+    <select id="author1">
+      <option>Anonim</option>
+      <option>Yusuf Has Hacib</option>
+      <option>Karacaoğlan</option>
+      <option>Fuzuli</option>
+      <option>Namık Kemal</option>
+      <option>Halit Ziya Uşaklıgil</option>
+      <option>Mehmet Rauf</option>
+      <option>Ömer Seyfettin</option>
+    </select>
 
-    <!-- VIEW 4: YAZARA GÖRE SAYFASI -->
-    <section id="viewAuthor" class="view">
-      <h2 class="title">Yazara Göre<br/><span>edebi diyalog</span></h2>
+    <select id="author2">
+      <option>Anonim</option>
+      <option>Yusuf Has Hacib</option>
+      <option>Karacaoğlan</option>
+      <option>Fuzuli</option>
+      <option>Namık Kemal</option>
+      <option>Halit Ziya Uşaklıgil</option>
+      <option>Mehmet Rauf</option>
+      <option>Ömer Seyfettin</option>
+    </select>
 
-      <div class="panel">
-        <div class="twoCol">
-          <div>
-            <label class="label" for="author1">1. yazar</label>
-            <select id="author1">
-              <option>Anonim</option>
-              <option>Yusuf Has Hacib</option>
-              <option>Karacaoğlan</option>
-              <option>Fuzuli</option>
-              <option>Namık Kemal</option>
-              <option>Halit Ziya Uşaklıgil</option>
-              <option>Mehmet Rauf</option>
-              <option>Ömer Seyfettin</option>
-            </select>
+    <input id="authorTopic" placeholder="İsteğe bağlı konu" />
 
-          </div>
+    <button id="generateAuthor">Oluştur</button>
+    <button id="backAuthor">Geri</button>
+  </div>
 
-          <div>
-            <label class="label" for="author2">2. yazar</label>
-            <select id="author2">
-              <option value="" selected disabled>— Yazar seç —</option>
-              <option value="Namık Kemal">Namık Kemal</option>
-              <option value="Recaizade Mahmut Ekrem">Recaizade Mahmut Ekrem</option>
-              <option value="Halit Ziya Uşaklıgil">Halit Ziya Uşaklıgil</option>
-              <option value="Mehmet Akif Ersoy">Mehmet Akif Ersoy</option>
-              <option value="Yakup Kadri Karaosmanoğlu">Yakup Kadri Karaosmanoğlu</option>
-              <option value="Sabahattin Ali">Sabahattin Ali</option>
-              <option value="Ahmet Hamdi Tanpınar">Ahmet Hamdi Tanpınar</option>
-              <option value="Oğuz Atay">Oğuz Atay</option>
-            </select>
-          </div>
-        </div>
+  <!-- RESULT -->
+  <div id="resultView" class="view">
+    <h2>Sonuç</h2>
+    <div id="outputText"></div>
+    <button id="backResult">Ana Sayfa</button>
+  </div>
 
-        <label class="label" for="authorTopic" style="margin-top:12px;">İstersen konu (opsiyonel)</label>
-        <select id="authorTopic">
-          <option value="" selected>— Otomatik seçsin —</option>
-          <option value="İnsan ve toplum">İnsan ve toplum</option>
-          <option value="Ahlak ve vicdan">Ahlak ve vicdan</option>
-          <option value="Adalet">Adalet</option>
-          <option value="Yalnızlık">Yalnızlık</option>
-          <option value="Modernleşme">Modernleşme</option>
-        </select>
-
-        <div class="row">
-          <button class="actionBtn" id="genAuthor">Metin oluştur</button>
-          <button class="ghost" id="backFromAuthor">← Geri</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- VIEW 5: SONUÇ -->
-    <section id="viewResult" class="view">
-      <h2 class="title">Oluşturulan Diyalog</h2>
-
-      <div class="resultTop">
-        <div class="avatar">
-          <div class="imgBox" id="leftAvatar">1. konuşmacı<br/>fotoğraf</div>
-        </div>
-        <div class="avatar">
-          <div class="imgBox" id="rightAvatar">2. konuşmacı<br/>fotoğraf</div>
-        </div>
-      </div>
-
-      <div id="output" class="output">Hazır.</div>
-
-      <div class="row">
-        <button class="ghost" id="backFromResult">← Ana sayfa</button>
-      </div>
-    </section>
-
-  </main>
-
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
