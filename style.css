@@ -1,200 +1,34 @@
-:root{
-  --bg:#f5f0e6;
-  --ink:#1e1f24;
-  --muted:#6a6f7a;
-  --stroke:#e7ddc9;
-
-  --blue:#9fe3ef;
-  --yellow:#ffe48a;
-  --green:#9fe6a7;
-
-  --shadow: 0 10px 28px rgba(30, 30, 30, .10);
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  text-align: center;
 }
 
-*{ box-sizing:border-box; }
-
-body{
-  margin:0;
-  min-height:100vh;
-  background:var(--bg);
-  color:var(--ink);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+.panel {
+  display: none;
+  padding: 40px;
 }
 
-.wrap{
-  width:min(980px, 100%);
-  margin:0 auto;
-  padding:24px 18px 40px;
+.panel.active {
+  display: block;
 }
 
-.header{
-  display:flex;
-  justify-content:center;
-  margin-top:10px;
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.badge{
-  background:var(--yellow);
-  padding:16px 22px;
-  border-radius:18px;
-  box-shadow: var(--shadow);
-  font-weight:800;
-  text-align:center;
+select, input {
+  margin: 10px;
+  padding: 8px;
 }
 
-.view{ display:none; margin-top:26px; }
-.view.active{ display:block; }
-
-/* 3'lü buton yerleşimi: 2 üst, 1 alt-ortada */
-.choices3{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:22px;
-  justify-items:center;
-  align-items:center;
-  margin-top:140px;
+#outputText {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-wrap;
 }
 
-/* Mavi butonlar (büyük) — user edited state */
-.pill{
-  background:var(--blue);
-  border:none;
-
-  padding:28px 40px;
-  min-width:260px;
-  min-height:110px;
-
-  border-radius:28px;
-  font-size:1.25rem;
-  font-weight:800;
-
-  cursor:pointer;
-  box-shadow: var(--shadow);
-}
-
-.choices3 .pill{
-  width:100%;
-  max-width:420px;
-}
-
-/* 3. buton alt ortada */
-.pillCenter{
-  grid-column: 1 / span 2;
-  justify-self:center;
-}
-
-@media (max-width: 720px){
-  .choices3{
-    grid-template-columns: 1fr;
-    margin-top:90px;
-  }
-  .pillCenter{
-    grid-column:auto;
-  }
-}
-
-.title{
-  text-align:center;
-  margin:26px 0 18px;
-  font-size:1.7rem;
-}
-.title span{ font-size:1.05rem; color:var(--muted); font-weight:600; }
-
-.panel{
-  width:min(760px, 100%);
-  margin:0 auto;
-  background:rgba(255,255,255,.55);
-  border:1px solid var(--stroke);
-  border-radius:18px;
-  padding:18px;
-  box-shadow: var(--shadow);
-}
-
-.label{
-  display:block;
-  font-weight:800;
-  margin:8px 0 8px;
-}
-
-select{
-  width:100%;
-  padding:12px 12px;
-  border-radius:14px;
-  border:1px solid #ddd;
-  background:#fff;
-  font-size:1rem;
-}
-
-.twoCol{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:14px;
-}
-@media (max-width:720px){
-  .twoCol{ grid-template-columns:1fr; }
-}
-
-.row{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin-top:16px;
-  flex-wrap:wrap;
-}
-
-/* Yeşil aksiyon butonu (dikdörtgen) */
-.actionBtn{
-  background:var(--green);
-  border:none;
-  padding:16px 28px;
-  min-width:220px;
-  border-radius:18px;
-  font-size:1.15rem;
-  font-weight:900;
-  cursor:pointer;
-  box-shadow: var(--shadow);
-}
-
-.ghost{
-  background:transparent;
-  border:1px solid var(--stroke);
-  padding:10px 16px;
-  border-radius:14px;
-  cursor:pointer;
-  font-weight:700;
-}
-
-.resultTop{
-  width:min(760px, 100%);
-  margin:0 auto 14px;
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.imgBox{
-  width:160px;
-  height:160px;
-  background:#fff;
-  border:1px dashed #d7c9ab;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:var(--muted);
-  box-shadow: var(--shadow);
-}
-
-.output{
-  width:min(760px, 100%);
-  margin:0 auto;
-  background:#fff;
-  border:1px solid var(--stroke);
-  border-radius:18px;
-  padding:16px;
-  white-space:pre-wrap;
-  line-height:1.6;
-  box-shadow: var(--shadow);
-  min-height:240px;
-}
