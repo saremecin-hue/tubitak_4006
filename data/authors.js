@@ -1,77 +1,50 @@
-const authors = {
-
-  "Anonim": {
-    donem: "İslamiyet Öncesi",
-    dilSeviyesi: 2,
-    cumleUzunluk: 2,
-    duyguYogunluk: 3,
-    toplumsallik: 5,
-    soyutluk: 2
+export const authors = [
+  {
+    name: "Anonim",
+    era: "İslamiyet Öncesi",
+    styleVector: [0.6, 0.2, 0.7, 0.3, 0.5],
+    description: "Sözlü kültüre dayalı, anonim halk anlatıları."
   },
-
-  "Yusuf Has Hacib": {
-    donem: "Geçiş Dönemi",
-    dilSeviyesi: 3,
-    cumleUzunluk: 3,
-    duyguYogunluk: 3,
-    toplumsallik: 4,
-    soyutluk: 4
+  {
+    name: "Yusuf Has Hacib",
+    era: "Geçiş Dönemi",
+    styleVector: [0.8, 0.7, 0.4, 0.6, 0.5],
+    description: "Didaktik, ahlaki ve devlet felsefesi temelli anlatım."
   },
-
-  "Karacaoğlan": {
-    donem: "Halk Edebiyatı",
-    dilSeviyesi: 1,
-    cumleUzunluk: 2,
-    duyguYogunluk: 5,
-    toplumsallik: 2,
-    soyutluk: 2
+  {
+    name: "Karacaoğlan",
+    era: "Halk Edebiyatı",
+    styleVector: [0.7, 0.3, 0.6, 0.4, 0.8],
+    description: "Doğal, sade, aşk ve doğa temalı şiir dili."
   },
-
-  "Fuzuli": {
-    donem: "Divan Edebiyatı",
-    dilSeviyesi: 5,
-    cumleUzunluk: 5,
-    duyguYogunluk: 5,
-    toplumsallik: 2,
-    soyutluk: 5
+  {
+    name: "Fuzuli",
+    era: "Divan Edebiyatı",
+    styleVector: [0.9, 0.8, 0.3, 0.7, 0.4],
+    description: "Ağır dil, tasavvufi ve derin mecazlı anlatım."
   },
-
-  "Namık Kemal": {
-    donem: "Tanzimat",
-    dilSeviyesi: 4,
-    cumleUzunluk: 4,
-    duyguYogunluk: 4,
-    toplumsallik: 5,
-    soyutluk: 3
+  {
+    name: "Namık Kemal",
+    era: "Tanzimat",
+    styleVector: [0.8, 0.6, 0.9, 0.5, 0.4],
+    description: "Vatan, özgürlük ve toplumsal bilinç temelli yazım."
   },
-
-  "Halit Ziya Uşaklıgil": {
-    donem: "Servet-i Fünun",
-    dilSeviyesi: 5,
-    cumleUzunluk: 5,
-    duyguYogunluk: 4,
-    toplumsallik: 2,
-    soyutluk: 4
+  {
+    name: "Halit Ziya Uşaklıgil",
+    era: "Servet-i Fünun",
+    styleVector: [0.9, 0.9, 0.4, 0.8, 0.6],
+    description: "Psikolojik derinlik ve bireysel çözümleme."
   },
-
-  "Mehmet Rauf": {
-    donem: "Servet-i Fünun",
-    dilSeviyesi: 4,
-    cumleUzunluk: 4,
-    duyguYogunluk: 5,
-    toplumsallik: 2,
-    soyutluk: 4
+  {
+    name: "Mehmet Rauf",
+    era: "Servet-i Fünun",
+    styleVector: [0.85, 0.9, 0.3, 0.75, 0.7],
+    description: "Melankolik, bireysel ve iç dünyaya odaklı anlatım."
   },
-
-  "Ömer Seyfettin": {
-    donem: "Milli Edebiyat",
-    dilSeviyesi: 2,
-    cumleUzunluk: 2,
-    duyguYogunluk: 3,
-    toplumsallik: 4,
-    soyutluk: 2
+  {
+    name: "Ömer Seyfettin",
+    era: "Milli Edebiyat",
+    styleVector: [0.7, 0.5, 0.8, 0.4, 0.6],
+    description: "Sade dil, milli bilinç ve hikâye temelli anlatım."
   }
-
-};
-
-module.exports = authors;
+];
